@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>新增手机界面</title>
+    <link rel="stylesheet" type="text/css" href="http://localhost:151/easyui166/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:151/easyui166/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:151/easyui166/demo/demo.css">
+    <script type="text/javascript" src="http://localhost:151/easyui166/jquery.min.js"></script>
+    <script type="text/javascript" src="http://localhost:151/easyui166/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="http://localhost:151/easyui166/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://localhost:151/easyui166/themes/color.css">
+    <script type="text/javascript" src="addMobile.js"></script>
+</head>
+
+<style type="text/css">
+    input
+    {
+        font-family: 微软雅黑;
+    }
+	
+	.textbox .textbox-text
+	{
+		font-family: 微软雅黑;
+	}
+</style>
+
+<body class="easyui-layout" style="font-family: 微软雅黑; width:100%;height:100%;">
+<div data-options="region:'east',split:true" title="East" style="width:200px;">
+    <a href="#" class="easyui-linkbutton c7" style="width:100%" onclick="saveMobile()">确认新增</a>
+</div>
+<div data-options="region:'west',split:true" title="West" style="width:200px;"></div>
+<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+
+    <!-- <a href="#" class="easyui-linkbutton c7" style="width:80%">新增手机</a>  -->
+
+    <div id="tt" class="easyui-tabs" style="width:100%;height: 100%;">
+
+        <!--
+        =====基本信息
+
+        mbName           手机名称
+        mbQijiandianName 旗舰店名称
+        mbPublishDate    发布日期
+        mbScreenSize     屏幕尺寸
+        mbPrice          价格
+        mbCpu            cpu信息
+        mbBatteryMemory  电池
+        mbFrontCamera    前置摄像头
+        mbBackCamera     后置摄像头
+        mbDescription    描述
+        mbYunxingMemory  运行内存
+        mbJishenMemory   机身存储
+        mbCpuBrand       cpu品牌
+
+        =====图片
+        mbPhoto          图片
+        mbBigPhotoList   图片集合
+
+        =====分类
+        mbBrand          品牌
+
+        =====seo
+        mbDajiashuo      大家说
+        mbDuokazhichi    多开制式
+        mbYouxipeizhi    游戏配置
+        mbLaorenjipeizhi 老人机配置
+        mbPingmupeizhi   屏幕配置
+        mbWeight         重量
+        mbPhotoSpecial   拍照特效
+        mbBanben         版本
+        mbOperatorSystem 操作系统
+        mbHot            热点
+        mbColor          机身颜色
+        mbWangluozhishi  网络制式
+        mbFenbianlv      分辨率
+        -->
+
+        <div title="基本信息">
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbName"
+                       style="width:85%" data-options="label:'手机名称:',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbQijiandianName"
+                       style="width:85%" data-options="label:'旗舰店名称:',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-datetimebox" id="mbPublishDate"
+                       style="width:85%" data-options="label:'发布日期:',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <select class="easyui-combobox" id="mbScreenSize"
+                        style="width:85%" data-options="label:'屏幕尺寸:', required:true">
+                    <option value="defaultScreen">请选择</option>
+                    <option value="6.21英寸">6.21英寸</option>
+                    <option value="5.88英寸">5.88英寸</option>
+                    <option value="5.6英寸">5.6英寸</option>
+                    <option value="5.5英寸">5.5英寸</option>
+                    <option value="5.2英寸">5.2英寸</option>
+                    <option value="5.2英寸以下">5.2英寸以下</option>
+                </select>
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbPrice"
+                       style="width:85%" data-options="label:'价格:',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbCpu"
+                       style="width:85%" data-options="label:'cpu信息:',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <select class="easyui-combobox" id="mbBatteryMemory" label="电池" style="width:85%">
+                    <option value="defaultBattery">请选择</option>
+                    <option value="6000毫安">6000毫安</option>
+                    <option value="5000毫安">5000毫安</option>
+                    <option value="4000毫安">4000毫安</option>
+                    <option value="3600毫安">3600毫安</option>
+                    <option value="3400毫安">3400毫安</option>
+                    <option value="3200毫安">3200毫安</option>
+                    <option value="3000毫安">3000毫安</option>
+                </select>
+
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbFrontCamera"
+                       style="width:85%" data-options="label:'前置摄像头',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbBackCamera"
+                       style="width:85%" data-options="label:'后置摄像头',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbDescription"
+                       style="width:85%; height:300px;" data-options="label:'描述',required:true" multiline="true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbYunxingMemory"
+                       style="width:85%" data-options="label:'运行内存',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbJishenMemory"
+                       style="width:85%" data-options="label:'机身存储',required:true">
+            </div>
+
+            <div style="margin-top:20px; margin-left: 1%;">
+                <input class="easyui-textbox" id="mbCpuBrand"
+                       style="width:85%" data-options="label:'cpu品牌',required:true">
+            </div>
+
+        </div>
+
+        <div title="图片">
+        </div>
+
+        <div title="分类">
+        </div>
+
+        <div title="seo">
+        </div>
+
+        <div title="操作">
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
